@@ -1,3 +1,3 @@
-import { AdditionComponent } from "./services/AdditionComponent";
+import { run } from './app/app.js';
 
-const addComp = new AdditionComponent();
+run();

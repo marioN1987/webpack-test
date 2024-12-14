@@ -4,14 +4,21 @@ export class AdditionComponent {
         this.num2Inpt = document.getElementById('num2');
         this.btn = document.getElementById('btn');
         this.result = document.getElementById('result');
-
-        this.btn.addEventListener('click', () => {
-            this.addition();
-        });
     }
 
-    addition() {
-        const sum = +this.num1Inpt.value + +this.num2Inpt.value;
-        console.log('--', sum);
+    showResult(res) {
+        this.result.innerHTML = res;
+    }
+
+    getResult(input) {
+        return input.reduce((total, currentVal) => total + currentVal,0);
+    }
+
+    getInputs() {
+        return [this.num1Inpt.value, this.num2Inpt.value];
+    }
+
+    clickEvent(clickMethod) {
+        this.btn.addEventListener('click', clickMethod);
     }
 }
